@@ -1,27 +1,52 @@
-@use "./partials/global" as *;
-@use "./partials/font" as *;
-@use "./partials/mixins" as *;
-@use "./partials/variables" as *;
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-bold";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-demi";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Avenir";
+}
 
 h1 {
-  @include mobilePageHeader;
+  font: "Avenir-bold";
+  font-size: 2rem;
   padding-bottom: 1rem;
   padding-top: 1.5rem;
 }
+
 h2 {
-  @include mobileSubHeader;
+  font: "Avenir-demi";
+  font-size: 1.2rem;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
-nav {
-  @include tablet {
+
+@media (min-width: 768px) {
+  nav {
     display: flex;
     align-items: center;
   }
 }
 
 .heading {
-  color: $PrimaryColor3;
+  color: #ffffff;
   font-family: "Avenir";
   font-size: 2rem;
   font-weight: 300;
@@ -29,39 +54,52 @@ nav {
   display: flex;
   justify-content: center;
   padding: 1rem;
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .heading {
     font-size: 1.5rem;
   }
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  .heading {
     font-size: 1.2rem;
     padding-left: 4rem;
   }
 }
+
 .heading__list {
-  @include mobileSubHeader;
-  color: $SecondaryColor2;
+  font: "Avenir-demi";
+  font-size: 1.2rem;
+  color: #e1e1e1;
   text-decoration: none;
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;
   padding: 1rem;
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .heading__list {
     font-size: 0.9rem;
   }
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  .heading__list {
     font-size: 0.8rem;
   }
 }
 
 .heading_item {
   position: relative;
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .heading_item {
     display: flex;
     justify-content: space-evenly;
     padding-left: 1rem;
     padding-right: 1rem;
   }
 }
+
 .heading_item:hover::after {
   content: "";
   height: 2px;
@@ -71,9 +109,10 @@ nav {
   top: 2.5rem;
   left: 0;
 }
+
 header {
-  background-color: $PrimaryColor1;
-  color: $PrimaryColor3;
+  background-color: #323232;
+  color: #ffffff;
 }
 
 section.hero {
@@ -91,12 +130,17 @@ h1.hero {
   display: flex;
   align-items: center;
   height: 12rem;
-  @include mobilePageHeader;
-  @include tablet {
+  font: "Avenir-bold";
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  h1.hero {
     font-size: 2.5rem;
     height: 20rem;
   }
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  h1.hero {
     height: 25rem;
     padding: 4rem;
   }
@@ -104,53 +148,71 @@ h1.hero {
 
 section.About {
   padding: 0 1.5rem;
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  section.About {
     padding: 0 5rem;
   }
 }
-.About__content {
-  @include tablet {
+
+@media (min-width: 768px) {
+  .About__content {
     margin-left: 4rem;
     margin-right: 4rem;
   }
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  .About__content {
     margin-left: 8rem;
     margin-right: 8rem;
   }
 }
+
 .About__title {
-  @include mobilePageHeader;
+  font: "Avenir-bold";
+  font-size: 2rem;
 }
+
 img.About__pic {
   margin: auto;
 }
+
 .About__subheader {
-  @include mobileSubHeader;
+  font: "Avenir-demi";
+  font-size: 1.2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-weight: 500;
 }
-.About__paragraphs {
-  @include tablet {
+
+@media (min-width: 768px) {
+  .About__paragraphs {
     display: flex;
     justify-content: space-between;
   }
 }
+
 .About__paragraph {
-  @include mobileBodyCopy;
+  font: "Avenir";
+  font-size: 1.2rem;
   padding-bottom: 1rem;
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .About__paragraph {
     width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: top;
   }
 }
+
 .About__paragraphbold {
   padding-bottom: 1rem;
-  @include mobileBodyCopy;
+  font: "Avenir";
+  font-size: 1.2rem;
   font-weight: 600;
 }
+
 .About__pic {
   display: flex;
   width: 100%;
@@ -158,40 +220,48 @@ img.About__pic {
   margin: auto;
   padding-bottom: 1rem;
 }
+
 .Photo {
   display: flex;
   width: 100%;
   justify-content: center;
   margin: auto;
   padding-bottom: 1rem;
-
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .Photo {
     width: 30%;
   }
 }
 
-.photo__group {
-  @include tablet {
+@media (min-width: 768px) {
+  .photo__group {
     display: flex;
     justify-content: space-between;
   }
 }
 
 .photo--gallery {
-  background-color: $SecondaryColor3;
+  background-color: #fafafa;
 }
+
 div.photo--gallery {
   margin: 0 1.5rem;
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  div.photo--gallery {
     margin: 0 5rem;
   }
 }
+
 .footer {
-  background-color: $PrimaryColor1;
-  color: $PrimaryColor3;
+  background-color: #323232;
+  color: #ffffff;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  .footer {
     padding-left: 5rem;
     padding-right: 5rem;
   }
@@ -199,54 +269,70 @@ div.photo--gallery {
 
 .footer__icon {
   padding-right: 1rem;
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .footer__icon {
     padding-left: 1rem;
   }
 }
+
 .email {
   display: flex;
   text-decoration: none;
-  color: $PrimaryColor3;
+  color: #ffffff;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.footer__title {
-  @include tablet {
+
+@media (min-width: 768px) {
+  .footer__title {
     display: flex;
     justify-content: left;
   }
 }
-.footer__address {
-  @include tablet {
+
+@media (min-width: 768px) {
+  .footer__address {
     display: flex;
     justify-content: space-between;
   }
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  .footer__address {
     width: 60%;
   }
 }
+
 .footer__logo1 {
   display: none;
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .footer__logo1 {
     display: flex;
     margin-left: auto;
     font-family: "Avenir";
     font-size: 1.5rem;
     font-weight: 300;
   }
-  @include desktop {
+}
+@media (min-width: 1280px) {
+  .footer__logo1 {
     padding-right: 2rem;
   }
 }
+
 .footer__logo2 {
   font-family: "Avenir";
   font-size: 2rem;
   font-weight: 300;
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .footer__logo2 {
     display: none;
   }
 }
+
 .copyright {
   display: flex;
   padding-bottom: 2rem;
-}
+}/*# sourceMappingURL=bio.css.map */
