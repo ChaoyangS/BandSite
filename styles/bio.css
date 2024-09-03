@@ -114,16 +114,35 @@ h2 {
   }
 }
 
-.heading .heading_item:hover::after a {
+.heading_item:hover {
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 1rem;
+}
+@media (min-width: 768px) {
+  .heading_item:hover {
+    text-underline-offset: 1.5rem;
+    text-decoration-thickness: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .heading_item:hover {
+    text-decoration-thickness: 4rem;
+  }
+}
+
+/*.heading .heading_item:hover::before {
   content: "";
   height: 2px;
   width: 100%;
-  background-color: #ffffff;
+  text-decoration: underline;
+  background-color: $PrimaryColor3;
   position: absolute;
   top: 2.5rem;
   left: 0;
 }
-
+  */
 header {
   background-color: #323232;
   color: #ffffff;

@@ -74,15 +74,31 @@ nav {
   }
 }
 
-.heading .heading_item:hover::after a {
+.heading_item:hover {
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 1rem;
+  @include tablet {
+    text-underline-offset: 1.5rem;
+    text-decoration-thickness: 1rem;
+  }
+  @include desktop {
+    text-decoration-thickness: 4rem;
+  }
+}
+/*.heading .heading_item:hover::before {
   content: "";
   height: 2px;
   width: 100%;
+  text-decoration: underline;
   background-color: $PrimaryColor3;
   position: absolute;
   top: 2.5rem;
   left: 0;
 }
+  */
+
 header {
   background-color: $PrimaryColor1;
   color: $PrimaryColor3;
