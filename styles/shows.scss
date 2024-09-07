@@ -1,0 +1,71 @@
+@use "./partials/_global" as *;
+@use "./partials/_font" as *;
+@use "./partials/_mixins" as *;
+@use "./partials/_variables" as *;
+
+section.hero-shows {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background: url("../assets/images/hero-shows.jpg") #323232;
+  background-blend-mode: overlay;
+  opacity: 90%;
+  padding: 6rem 1rem;
+  background-size: cover;
+}
+
+h1.hero-shows {
+  width: 50%;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 12rem;
+  @include mobilePageHeader;
+  @include tablet {
+    @include desktopPageHeader;
+    /*font-size: 2.5rem;*/
+    height: 20rem;
+  }
+
+  @include desktop {
+    @include desktopPageHeader;
+    height: 25rem;
+    padding: 4rem;
+  }
+}
+.shows {
+  padding: 1.5rem; //need to check guide
+}
+.shows__subtitle--date,
+.shows__subtitle--ven,
+.shows__subtitle--loc {
+  @include mobileLabels;
+  font-size: 1rem;
+  color: $PrimaryColor2;
+}
+.shows__date,
+.shows__venue,
+.shows__location {
+  @include mobileBodyCopy;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.shows__button {
+  display: flex;
+  @include mobileSubHeader;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  color: $PrimaryColor3;
+  background-color: $PrimaryColor1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+iframe {
+  padding-left: 1rem;
+}

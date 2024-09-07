@@ -1,3 +1,5 @@
+@use "./_mixins" as *;
+@use "./_variables" as *;
 @use "./_font" as *;
 * {
   margin: 0;
@@ -5,4 +7,166 @@
 
 body {
   font-family: "Avenir";
+}
+h1 {
+  @include mobilePageHeader;
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+
+  @include tablet {
+    padding-bottom: 2.25rem;
+    padding-top: 3rem;
+  }
+}
+h2 {
+  @include mobileSubHeader;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  @include tablet {
+    padding-bottom: 2.25rem;
+    padding-top: 3rem;
+  }
+}
+
+nav {
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.heading {
+  color: $PrimaryColor3;
+  font-family: "Avenir";
+  font-size: 2rem;
+  font-weight: 300;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  @include tablet {
+    font-size: 1.5rem;
+  }
+  @include desktop {
+    font-size: 1.2rem;
+    padding-left: 4rem;
+  }
+}
+.heading__list {
+  @include mobileSubHeader;
+  color: $SecondaryColor2;
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  @include tablet {
+    font-size: 0.9rem;
+  }
+  @include desktop {
+    font-size: 0.8rem;
+  }
+}
+
+.heading_item {
+  position: relative;
+  text-decoration: none;
+  color: $PrimaryColor2;
+  @include tablet {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.heading_item:hover {
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 1rem;
+  @include tablet {
+    text-underline-offset: 1.5rem;
+    text-decoration-thickness: 1rem;
+  }
+  @include desktop {
+    text-decoration-thickness: 4rem;
+  }
+}
+
+header {
+  background-color: $PrimaryColor1;
+  color: $PrimaryColor3;
+}
+
+.footer {
+  background-color: $PrimaryColor1;
+  color: $PrimaryColor3;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  @include desktop {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.footer__icon {
+  padding-right: 1rem;
+  @include tablet {
+    padding-left: 1rem;
+  }
+}
+.email {
+  display: flex;
+  text-decoration: none;
+  color: $PrimaryColor3;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.footer__title {
+  @include tablet {
+    display: flex;
+    justify-content: left;
+  }
+}
+.footer__address {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include desktop {
+    width: 60%;
+  }
+}
+.footer__logo1 {
+  display: none;
+  @include tablet {
+    display: flex;
+    margin-left: auto;
+    font-family: "Avenir";
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  @include desktop {
+    padding-right: 2rem;
+  }
+}
+.footer__logo2 {
+  font-family: "Avenir";
+  font-size: 2rem;
+  font-weight: 300;
+  @include tablet {
+    display: none;
+  }
+}
+.copyright {
+  display: flex;
+  padding-bottom: 2rem;
+
+  @include tablet {
+    padding-top: 2rem;
+  }
+}
+hr {
+  color: $SecondaryColor2;
 }

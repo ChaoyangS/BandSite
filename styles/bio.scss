@@ -1,97 +1,7 @@
-@use "./partials/global" as *;
-@use "./partials/font" as *;
-@use "./partials/mixins" as *;
-@use "./partials/variables" as *;
-
-h1 {
-  @include mobilePageHeader;
-  padding-bottom: 1rem;
-  padding-top: 1.5rem;
-
-  @include tablet {
-    padding-bottom: 2.25rem;
-    padding-top: 3rem;
-  }
-}
-h2 {
-  @include mobileSubHeader;
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
-  @include tablet {
-    padding-bottom: 2.25rem;
-    padding-top: 3rem;
-  }
-}
-nav {
-  @include tablet {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.heading {
-  color: $PrimaryColor3;
-  font-family: "Avenir";
-  font-size: 2rem;
-  font-weight: 300;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  @include tablet {
-    font-size: 1.5rem;
-  }
-  @include desktop {
-    font-size: 1.2rem;
-    padding-left: 4rem;
-  }
-}
-.heading__list {
-  @include mobileSubHeader;
-  color: $SecondaryColor2;
-  text-decoration: none;
-  list-style-type: none;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 1rem;
-  @include tablet {
-    font-size: 0.9rem;
-  }
-  @include desktop {
-    font-size: 0.8rem;
-  }
-}
-
-.heading_item {
-  position: relative;
-  text-decoration: none;
-  color: $PrimaryColor2;
-  @include tablet {
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-.heading_item:hover {
-  color: white;
-  text-decoration: underline;
-  text-decoration-thickness: 0.2rem;
-  text-underline-offset: 1rem;
-  @include tablet {
-    text-underline-offset: 1.5rem;
-    text-decoration-thickness: 1rem;
-  }
-  @include desktop {
-    text-decoration-thickness: 4rem;
-  }
-}
-
-header {
-  background-color: $PrimaryColor1;
-  color: $PrimaryColor3;
-}
+@use "./partials/_global" as *;
+@use "./partials/_font" as *;
+@use "./partials/_mixins" as *;
+@use "./partials/_variables" as *;
 
 section.hero {
   display: flex;
@@ -209,71 +119,137 @@ div.photo--gallery {
     margin: 0 5rem;
   }
 }
-.footer {
-  background-color: $PrimaryColor1;
-  color: $PrimaryColor3;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  @include desktop {
-    padding-left: 5rem;
-    padding-right: 5rem;
+
+.comments__top {
+  display: flex;
+  width: 100%;
+}
+.comments__box {
+  width: 100%;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+.comment__form {
+  display: flex;
+  padding-right: 2rem;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: right;
+  @include tablet {
+    width: 50%;
+    margin: auto;
+  }
+}
+.comments__avatar {
+  background-image: url("../assets/images/Mohan-muruge.jpg");
+  background-size: cover;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  //padding: 1rem;
+
+  @include tablet {
+    width: 3rem;
+    height: 3rem;
   }
 }
 
-.footer__icon {
-  padding-right: 1rem;
+.description {
+  @include mobileLabels;
+  font-size: 1rem;
+  color: $PrimaryColor2;
+  font-weight: 700;
+  display: flex;
+  width: 100%;
+}
+.description__name {
+  display: flex;
+  border-radius: 0.25rem;
+  border-color: $SecondaryColor2;
+  background-color: $SecondaryColor3;
+  border-style: solid;
+  width: 100%;
+  height: 2.25rem;
+}
+.description__comment {
+  display: flex;
+  border-radius: 0.25rem;
+  border-color: $SecondaryColor2;
+  background-color: $SecondaryColor3;
+  border-style: solid;
+  width: 100%;
+  height: 6rem;
+}
+
+.comments__button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  @include mobileSubHeader;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  color: $PrimaryColor3;
+  background-color: $PrimaryColor1;
+
   @include tablet {
-    padding-left: 1rem;
+    width: 50%;
+    align-items: self-end;
   }
 }
-.email {
-  display: flex;
-  text-decoration: none;
-  color: $PrimaryColor3;
+
+label.description {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.footer__title {
+
+button {
+  margin-top: 1rem;
+}
+
+::placeholder {
+  @include mobileBodyCopy;
+  text-align: justify;
+  color: $PrimaryColor1;
+  padding: 0.5rem;
+}
+
+hr {
+  background-color: $SecondaryColor2;
+  height: 0.01rem;
+  border-color: $SecondaryColor2;
+  border: solid;
+  width: 90%;
+  margin: auto;
   @include tablet {
-    display: flex;
-    justify-content: left;
+    width: 50%;
   }
 }
-.footer__address {
-  @include tablet {
-    display: flex;
-    justify-content: space-between;
-  }
-  @include desktop {
-    width: 60%;
-  }
-}
-.footer__logo1 {
-  display: none;
-  @include tablet {
-    display: flex;
-    margin-left: auto;
-    font-family: "Avenir";
-    font-size: 1.5rem;
-    font-weight: 300;
-  }
-  @include desktop {
-    padding-right: 2rem;
-  }
-}
-.footer__logo2 {
-  font-family: "Avenir";
-  font-size: 2rem;
-  font-weight: 300;
-  @include tablet {
-    display: none;
-  }
-}
-.copyright {
+
+.comments--box__title {
   display: flex;
-  padding-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.comments__right {
+  width: 100%;
+  padding-left: 1rem;
+}
+.comments__append {
+  display: flex;
+  align-items: baseline;
+  width: 95%;
 
   @include tablet {
-    padding-top: 2rem;
+    width: 50%;
+    margin: auto;
   }
+}
+.comments--box__date {
+  color: $PrimaryColor2;
+  font-weight: 500;
+}
+.comments--box__p {
+  @include mobileBodyCopy;
+  padding-bottom: 2rem;
 }
