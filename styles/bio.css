@@ -40,13 +40,11 @@ h1 {
 h2 {
   font: "Avenir-demi";
   font-size: 1.2rem;
-  padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
   h2 {
     padding-bottom: 2.25rem;
-    padding-top: 3rem;
   }
 }
 
@@ -227,6 +225,12 @@ header {
 
 hr {
   color: #e1e1e1;
+  background-color: #e1e1e1;
+  height: 0.01rem;
+  border: solid;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
 section.hero {
@@ -381,17 +385,18 @@ div.photo--gallery {
 .comments__top {
   display: flex;
   width: 100%;
+  margin: auto;
 }
 
 .comments__box {
-  width: 100%;
+  width: 90%;
   padding-left: 1rem;
   padding-bottom: 1rem;
 }
 
 .comment__form {
   display: flex;
-  padding-right: 2rem;
+  width: 95%;
   flex-direction: column;
   align-items: flex-end;
   justify-content: right;
@@ -403,6 +408,10 @@ div.photo--gallery {
   }
 }
 
+.comments__list1 {
+  display: flex;
+}
+
 .comments__avatar {
   background-image: url("../assets/images/Mohan-muruge.jpg");
   background-size: cover;
@@ -412,6 +421,19 @@ div.photo--gallery {
 }
 @media (min-width: 768px) {
   .comments__avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.comments__avatar1 {
+  background-color: #e1e1e1;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  .comments__avatar1 {
     width: 3rem;
     height: 3rem;
   }
@@ -433,8 +455,22 @@ div.photo--gallery {
   border-color: #e1e1e1;
   background-color: #fafafa;
   border-style: solid;
+  border-width: 0.0625rem;
   width: 100%;
   height: 2.25rem;
+}
+@media (min-width: 768px) {
+  .description__name {
+    height: 3rem;
+  }
+}
+.description__name:focus {
+  outline: none !important;
+  border: 1px solid #000000;
+}
+.description__name:focus:invalid {
+  outline: none !important;
+  border: 1px solid red;
 }
 
 .description__comment {
@@ -443,8 +479,23 @@ div.photo--gallery {
   border-color: #e1e1e1;
   background-color: #fafafa;
   border-style: solid;
+  border-width: 0.0625rem;
   width: 100%;
   height: 6rem;
+}
+.description__comment:focus {
+  outline: none !important;
+  border: 1px solid #000000;
+}
+.description__comment:focus:invalid {
+  outline: none !important;
+  border: 1px solid red;
+}
+
+.description--block {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .comments__button {
@@ -462,8 +513,12 @@ div.photo--gallery {
 @media (min-width: 768px) {
   .comments__button {
     width: 50%;
-    align-items: self-end;
+    align-items: end;
   }
+}
+
+.comments__button:hover {
+  background-color: #000000;
 }
 
 label.description {
@@ -491,34 +546,21 @@ button {
   padding: 0.5rem;
 }
 
-hr {
-  background-color: #e1e1e1;
-  height: 0.01rem;
-  border-color: #e1e1e1;
-  border: solid;
-  width: 90%;
-  margin: auto;
-}
-@media (min-width: 768px) {
-  hr {
-    width: 50%;
-  }
-}
-
 .comments--box__title {
   display: flex;
   justify-content: space-between;
 }
 
 .comments__right {
-  width: 100%;
-  padding-left: 1rem;
+  width: 90%;
+  padding-left: 0.5rem;
 }
 
 .comments__append {
   display: flex;
   align-items: baseline;
   width: 95%;
+  margin: auto;
 }
 @media (min-width: 768px) {
   .comments__append {

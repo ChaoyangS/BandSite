@@ -20,18 +20,33 @@ h1.hero-shows {
   color: white;
   display: flex;
   align-items: center;
-  height: 12rem;
+  height: 8rem;
   @include mobilePageHeader;
   @include tablet {
     @include desktopPageHeader;
     /*font-size: 2.5rem;*/
-    height: 20rem;
   }
 
   @include desktop {
     @include desktopPageHeader;
-    height: 25rem;
-    padding: 4rem;
+  }
+}
+p.hero-album {
+  width: 50%;
+  color: white;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+
+  @include mobileBodyCopy;
+  @include tablet {
+    @include desktopPageHeader;
+    /*font-size: 2.5rem;*/
+    padding-bottom: 2rem;
+  }
+
+  @include desktop {
+    @include desktopPageHeader;
   }
 }
 .shows {
@@ -43,29 +58,66 @@ h1.hero-shows {
   @include mobileLabels;
   font-size: 1rem;
   color: $PrimaryColor2;
-}
-.shows__date,
-.shows__venue,
-.shows__location {
-  @include mobileBodyCopy;
-  font-size: 1.3rem;
-  font-weight: 500;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+
+  @include tablet {
+    display: none;
+  }
 }
 
+.shows,
+.shows {
+  &__venue,
+  &__location {
+    @include mobileBodyCopy;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  &__date {
+    @include mobileBodyCopy;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+.shows-section {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: baseline;
+  }
+  &:hover {
+    background-color: $SecondaryColor3;
+  }
+}
 .shows__button {
   display: flex;
+  align-items: center;
+  height: 2.5rem;
   @include mobileSubHeader;
   padding: 1rem;
   border-radius: 0.25rem;
   color: $PrimaryColor3;
   background-color: $PrimaryColor1;
   width: 100%;
-  display: flex;
+  margin-bottom: 1rem;
+
   justify-content: center;
+  @include tablet {
+    width: 20rem;
+  }
+}
+.shows__button:hover {
+  background-color: $SecondaryColor1;
 }
 
 iframe {
   padding-left: 1rem;
+}
+
+hr {
+  margin-top: 0rem;
 }

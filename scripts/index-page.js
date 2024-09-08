@@ -31,10 +31,10 @@ function displayComments() {
 
 function displayComment(comment) {
   const commentEle = document.createElement("article");
-  commentEle.classList.add("comments__list");
+  commentEle.classList.add("comments__list1");
 
   const commentAvatarEle = document.createElement("div");
-  commentAvatarEle.classList.add("comments__avatar");
+  commentAvatarEle.classList.add("comments__avatar1");
   commentEle.appendChild(commentAvatarEle);
 
   const commentSec = document.createElement("section");
@@ -65,6 +65,9 @@ function displayComment(comment) {
   commentSec2.appendChild(commentDate);
 
   commentListEle.appendChild(commentEle);
+  const commentD = document.createElement("hr");
+  commentP.classList.add("solid");
+  commentListEle.appendChild(commentD);
 }
 
 const commentForm = document.querySelector(".comment__form");
@@ -94,35 +97,3 @@ commentForm.addEventListener("submit", (event) => {
 });
 
 displayComments();
-/*
-const formEle = document.querySelector(".comments__append");
-const form = document.querySelector(".commentForm");
-
-//console.log(form);
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const form = event.target;
-  const noteNameVal = form.name.value;
-  const noteCommentVal = form.comment.value;
-
-  //console.log(noteNameVal, noteCommentVal);
-
-  // if (noteNameVal !== "" && noteCommentVal !== "") {
-  //comments.push({
-  // name: noteNameVal,
-  //time: "00/00/1999",
-  //  comment: noteCommentVal,
-  //});
-  const orderEle = document.createElement("div");
-  orderEle.innterText = "111";
-  console.log("1");
-  formEle.appendChild(orderEle);
-  //renderNotes();
-  form.reset();
-  // } else {
-  //  alert("please enter text");
-  //}
-});
-
-*/
