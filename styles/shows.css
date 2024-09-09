@@ -30,7 +30,7 @@ h1 {
   padding-bottom: 1rem;
   padding-top: 1.5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   h1 {
     padding-bottom: 2.25rem;
     padding-top: 3rem;
@@ -42,13 +42,13 @@ h2 {
   font-size: 1.2rem;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   h2 {
     padding-bottom: 2.25rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   nav {
     display: flex;
     align-items: center;
@@ -65,12 +65,12 @@ h2 {
   justify-content: center;
   padding: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .heading {
     font-size: 1.5rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .heading {
     font-size: 1.2rem;
     padding-left: 4rem;
@@ -87,12 +87,12 @@ h2 {
   justify-content: space-evenly;
   padding: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .heading__list {
     font-size: 0.9rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .heading__list {
     font-size: 0.8rem;
   }
@@ -103,7 +103,7 @@ h2 {
   text-decoration: none;
   color: #afafaf;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .heading_item {
     display: flex;
     justify-content: space-evenly;
@@ -118,13 +118,13 @@ h2 {
   text-decoration-thickness: 0.2rem;
   text-underline-offset: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .heading_item:hover {
     text-underline-offset: 1.5rem;
     text-decoration-thickness: 1rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .heading_item:hover {
     text-decoration-thickness: 4rem;
   }
@@ -141,7 +141,7 @@ header {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .footer {
     padding-left: 5rem;
     padding-right: 5rem;
@@ -151,7 +151,7 @@ header {
 .footer__icon {
   padding-right: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .footer__icon {
     padding-left: 1rem;
   }
@@ -165,20 +165,20 @@ header {
   padding-bottom: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .footer__title {
     display: flex;
     justify-content: left;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .footer__address {
     display: flex;
     justify-content: space-between;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .footer__address {
     width: 60%;
   }
@@ -187,7 +187,7 @@ header {
 .footer__logo1 {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .footer__logo1 {
     display: flex;
     margin-left: auto;
@@ -196,7 +196,7 @@ header {
     font-weight: 300;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .footer__logo1 {
     padding-right: 2rem;
   }
@@ -207,7 +207,7 @@ header {
   font-size: 2rem;
   font-weight: 300;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .footer__logo2 {
     display: none;
   }
@@ -217,7 +217,7 @@ header {
   display: flex;
   padding-bottom: 2rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .copyright {
     padding-top: 2rem;
   }
@@ -245,12 +245,12 @@ hr {
   background-size: cover;
   background-repeat: no-repeat;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .hero-show {
     height: 30rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .hero-show {
     display: flex;
     flex-direction: row;
@@ -260,7 +260,7 @@ hr {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .hero-left {
     width: 50%;
   }
@@ -276,7 +276,7 @@ h1.hero-shows {
   font: "Avenir-bold";
   font-size: 2rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   h1.hero-shows {
     font: "Avenir-bold";
     font-size: 3.75rem;
@@ -286,7 +286,7 @@ h1.hero-shows {
     font-size: 4rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   h1.hero-shows {
     font: "Avenir-bold";
     font-size: 3.75rem;
@@ -304,14 +304,14 @@ p.hero-album {
   font: "Avenir";
   font-size: 1.2rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   p.hero-album {
     font: "Avenir-demi";
     font-size: 1.5rem;
     font-weight: 500;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   p.hero-album {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -322,7 +322,7 @@ p.hero-album {
 .shows {
   padding: 1.5rem;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .shows {
     display: flex;
     flex-direction: row;
@@ -331,7 +331,7 @@ p.hero-album {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .shows__title1 {
     width: 70%;
   }
@@ -345,7 +345,7 @@ p.hero-album {
   font-size: 1rem;
   color: #afafaf;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .shows__subtitle--date,
   .shows__subtitle--ven,
   .shows__subtitle--loc {
@@ -361,12 +361,12 @@ p.hero-album {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .shows__venue, .shows__location {
     font-size: 1.1rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .shows__venue, .shows__location {
     font: "Avenir";
     font-size: 0.875rem;
@@ -380,12 +380,12 @@ p.hero-album {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .shows__date {
     font-size: 1.1rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .shows__date {
     font: "Avenir";
     font-size: 0.875rem;
@@ -393,7 +393,7 @@ p.hero-album {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .shows-section {
     display: flex;
     justify-content: space-between;
@@ -419,17 +419,17 @@ p.hero-album {
   margin-bottom: 1rem;
   justify-content: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .shows__button {
     width: 15rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .shows__button {
     font-size: 1.2rem;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .shows__button {
     font-size: 1rem;
   }
@@ -443,7 +443,7 @@ p.hero-album {
   padding: 1rem;
   width: 70%;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1279px) {
   .hero-player {
     width: 40%;
   }
