@@ -3,19 +3,38 @@
 @use "./partials/_mixins" as *;
 @use "./partials/_variables" as *;
 
-section.hero-shows {
+.hero-show {
   display: flex;
   flex-direction: column;
   align-items: left;
+
+  justify-content: space-evenly;
   background: url("../assets/images/hero-shows.jpg") #323232;
   background-blend-mode: overlay;
   opacity: 90%;
-  padding: 6rem 1rem;
+  padding: 4rem 1rem;
   background-size: cover;
+  background-repeat: no-repeat;
+
+  @include tablet {
+    height: 30rem;
+  }
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+    height: 40rem;
+  }
+}
+.hero-left {
+  @include desktop {
+    width: 50%;
+  }
 }
 
 h1.hero-shows {
-  width: 50%;
+  width: 60%;
   padding: 1rem;
   color: white;
   display: flex;
@@ -24,15 +43,21 @@ h1.hero-shows {
   @include mobilePageHeader;
   @include tablet {
     @include desktopPageHeader;
-    /*font-size: 2.5rem;*/
+    width: 80%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 4rem;
   }
 
   @include desktop {
     @include desktopPageHeader;
+
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 p.hero-album {
-  width: 50%;
+  width: 70%;
   color: white;
   padding-left: 1rem;
   display: flex;
@@ -40,18 +65,31 @@ p.hero-album {
 
   @include mobileBodyCopy;
   @include tablet {
-    @include desktopPageHeader;
-    /*font-size: 2.5rem;*/
-    padding-bottom: 2rem;
+    @include desktopSubHeader;
+    font-weight: 500;
   }
-
   @include desktop {
-    @include desktopPageHeader;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 4rem;
   }
 }
+
 .shows {
-  padding: 1.5rem; //need to check guide
+  padding: 1.5rem;
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+  } //need to check guide
 }
+.shows__title1 {
+  @include desktop {
+    width: 70%;
+  }
+}
+
 .shows__subtitle--date,
 .shows__subtitle--ven,
 .shows__subtitle--loc {
@@ -64,7 +102,6 @@ p.hero-album {
   }
 }
 
-.shows,
 .shows {
   &__venue,
   &__location {
@@ -73,6 +110,13 @@ p.hero-album {
     font-weight: 500;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    @include tablet {
+      font-size: 1.1rem;
+    }
+
+    @include desktop {
+      @include desktopBodyCopy;
+    }
   }
   &__date {
     @include mobileBodyCopy;
@@ -80,6 +124,14 @@ p.hero-album {
     font-weight: 600;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    @include tablet {
+      font-size: 1.1rem;
+    }
+
+    @include desktop {
+      @include desktopBodyCopy;
+      font-weight: 600;
+    }
   }
 }
 .shows-section {
@@ -107,15 +159,25 @@ p.hero-album {
 
   justify-content: center;
   @include tablet {
-    width: 20rem;
+    width: 15rem;
+  }
+  @include tablet {
+    font-size: 1.2rem;
+  }
+  @include desktop {
+    font-size: 1rem;
   }
 }
 .shows__button:hover {
   background-color: $SecondaryColor1;
 }
 
-iframe {
-  padding-left: 1rem;
+.hero-player {
+  padding: 1rem;
+  width: 70%;
+  @include desktop {
+    width: 40%;
+  }
 }
 
 hr {

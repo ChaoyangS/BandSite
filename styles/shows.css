@@ -233,19 +233,41 @@ hr {
   margin-bottom: 2rem;
 }
 
-section.hero-shows {
+.hero-show {
   display: flex;
   flex-direction: column;
   align-items: left;
+  justify-content: space-evenly;
   background: url("../assets/images/hero-shows.jpg") #323232;
   background-blend-mode: overlay;
   opacity: 90%;
-  padding: 6rem 1rem;
+  padding: 4rem 1rem;
   background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .hero-show {
+    height: 30rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-show {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+    height: 40rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-left {
+    width: 50%;
+  }
 }
 
 h1.hero-shows {
-  width: 50%;
+  width: 60%;
   padding: 1rem;
   color: white;
   display: flex;
@@ -258,18 +280,23 @@ h1.hero-shows {
   h1.hero-shows {
     font: "Avenir-bold";
     font-size: 3.75rem;
-    /*font-size: 2.5rem;*/
+    width: 80%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 4rem;
   }
 }
 @media (min-width: 1280px) {
   h1.hero-shows {
     font: "Avenir-bold";
     font-size: 3.75rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
 p.hero-album {
-  width: 50%;
+  width: 70%;
   color: white;
   padding-left: 1rem;
   display: flex;
@@ -279,21 +306,35 @@ p.hero-album {
 }
 @media (min-width: 768px) {
   p.hero-album {
-    font: "Avenir-bold";
-    font-size: 3.75rem;
-    /*font-size: 2.5rem;*/
-    padding-bottom: 2rem;
+    font: "Avenir-demi";
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 }
 @media (min-width: 1280px) {
   p.hero-album {
-    font: "Avenir-bold";
-    font-size: 3.75rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 4rem;
   }
 }
 
 .shows {
   padding: 1.5rem;
+}
+@media (min-width: 1280px) {
+  .shows {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1280px) {
+  .shows__title1 {
+    width: 70%;
+  }
 }
 
 .shows__subtitle--date,
@@ -312,9 +353,7 @@ p.hero-album {
   }
 }
 
-.shows__venue, .shows__location,
-.shows__venue,
-.shows__location {
+.shows__venue, .shows__location {
   font: "Avenir";
   font-size: 1.2rem;
   font-size: 1.3rem;
@@ -322,7 +361,17 @@ p.hero-album {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-.shows__date,
+@media (min-width: 768px) {
+  .shows__venue, .shows__location {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__venue, .shows__location {
+    font: "Avenir";
+    font-size: 0.875rem;
+  }
+}
 .shows__date {
   font: "Avenir";
   font-size: 1.2rem;
@@ -330,6 +379,18 @@ p.hero-album {
   font-weight: 600;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__date {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__date {
+    font: "Avenir";
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
 }
 
 @media (min-width: 768px) {
@@ -360,7 +421,17 @@ p.hero-album {
 }
 @media (min-width: 768px) {
   .shows__button {
-    width: 20rem;
+    width: 15rem;
+  }
+}
+@media (min-width: 768px) {
+  .shows__button {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__button {
+    font-size: 1rem;
   }
 }
 
@@ -368,8 +439,14 @@ p.hero-album {
   background-color: #000000;
 }
 
-iframe {
-  padding-left: 1rem;
+.hero-player {
+  padding: 1rem;
+  width: 70%;
+}
+@media (min-width: 1280px) {
+  .hero-player {
+    width: 40%;
+  }
 }
 
 hr {
