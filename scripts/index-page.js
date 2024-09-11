@@ -1,30 +1,36 @@
-const comments = [
-  {
-    name: "Isaac Tadesse",
-    time: "10/20/2023",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-  {
-    name: "Christina Cabrera",
-    time: "10/28/2023",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Victor Pinto",
-    time: "10/20/2023",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-];
+// const comments = [
+//   {
+//     name: "Isaac Tadesse",
+//     time: "10/20/2023",
+//     comment:
+//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+//   {
+//     name: "Christina Cabrera",
+//     time: "10/28/2023",
+//     comment:
+//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     name: "Victor Pinto",
+//     time: "10/20/2023",
+//     comment:
+//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+// ];
+
+const BandSite = new BandSiteApi(apiKey);
+const comments = await BandSite.getComments();
+
+//console.log(dateNew);
 
 const commentListEle = document.querySelector(".comments__list");
 console.log(commentListEle);
 
 function displayComments() {
   commentListEle.innerHTML = "";
-  comments.toReversed().forEach((comment) => {
+  console.log(comments);
+  comments.forEach((comment) => {
     displayComment(comment);
   });
 }
@@ -61,7 +67,8 @@ function displayComment(comment) {
 
   const commentDate = document.createElement("h2");
   commentDate.classList.add("comments--box__date");
-  commentDate.textContent = comment.time;
+
+  commentDate.textContent = comment.timestamp;
   commentSec2.appendChild(commentDate);
 
   commentListEle.appendChild(commentEle);
@@ -72,25 +79,27 @@ function displayComment(comment) {
 
 const commentForm = document.querySelector(".comment__form");
 
-commentForm.addEventListener("submit", (event) => {
+commentForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const form = event.target;
   const name = form.name.value;
-  const time = `${
+  const timestamp = `${
     new Date().getMonth() + 1
   }/${new Date().getDate()}/${new Date().getFullYear()}`;
   const comment = form.comment.value;
 
-  console.log(name, comment);
+  //console.log(name, comment);
   const newComment = {
     name: name,
-    time: time,
+    timestamp: timestamp,
     comment: comment,
   };
 
   comments.push(newComment);
   console.log(comments);
+  BandSite.postComment(comments);
+
   form.reset();
 
   displayComments();

@@ -1,35 +1,39 @@
-const show1 = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Nov 16 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// const show1 = [
+//   {
+//     date: "Mon Sept 09 2024",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Tue Sept 17 2024",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Oct 12 2024",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Nov 16 2024",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Nov 29 2024",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Wed Nov 16 2024",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
+
+const BandSite1 = new BandSiteApi(apiKey);
+const show1 = await BandSite1.getShows();
+console.log(show1);
 
 const showListEle = document.querySelector(".shows__title1");
 console.log(showListEle);
@@ -66,7 +70,7 @@ function displayShow(show) {
 
   const showVenueCon = document.createElement("h4");
   showVenueCon.classList.add("shows__venue");
-  showVenueCon.textContent = show.venue;
+  showVenueCon.textContent = show.place;
   showSec.appendChild(showVenueCon);
 
   const showLocEle = document.createElement("h3");
