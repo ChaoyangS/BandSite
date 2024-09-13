@@ -1,36 +1,3 @@
-// const show1 = [
-//   {
-//     date: "Mon Sept 09 2024",
-//     venue: "Ronald Lane",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Tue Sept 17 2024",
-//     venue: "Pier 3 East",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Sat Oct 12 2024",
-//     venue: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Sat Nov 16 2024",
-//     venue: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Nov 29 2024",
-//     venue: "Moscow Center",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Wed Nov 16 2024",
-//     venue: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
-
 const BandSite1 = new BandSiteApi(apiKey);
 const show1 = await BandSite1.getShows();
 console.log(show1);
@@ -60,7 +27,7 @@ function displayShow(show) {
 
   const showDateCon = document.createElement("h4");
   showDateCon.classList.add("shows__date");
-  showDateCon.textContent = show.date;
+  showDateCon.textContent = convertTime(show.date);
   showSec.appendChild(showDateCon);
 
   const showVenueEle = document.createElement("h3");
@@ -93,6 +60,15 @@ function displayShow(show) {
   showEle.appendChild(showDivider);
 
   showListEle.appendChild(showEle);
+}
+
+function convertTime(timestamp) {
+  const date = new Date(timestamp);
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  return `${month}/${day}/${year}`;
 }
 
 displayShows();

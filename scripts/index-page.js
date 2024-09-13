@@ -1,24 +1,3 @@
-// const comments = [
-//   {
-//     name: "Isaac Tadesse",
-//     time: "10/20/2023",
-//     comment:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-//   {
-//     name: "Christina Cabrera",
-//     time: "10/28/2023",
-//     comment:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     name: "Victor Pinto",
-//     time: "10/20/2023",
-//     comment:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-// ];
-
 const BandSite = new BandSiteApi(apiKey);
 const comments = await BandSite.getComments();
 
@@ -68,7 +47,7 @@ function displayComment(comment) {
   const commentDate = document.createElement("h2");
   commentDate.classList.add("comments--box__date");
 
-  commentDate.textContent = comment.timestamp;
+  commentDate.textContent = convertTime(comment.timestamp);
   commentSec2.appendChild(commentDate);
 
   commentListEle.appendChild(commentEle);
@@ -104,5 +83,14 @@ commentForm.addEventListener("submit", async (event) => {
 
   displayComments();
 });
+
+function convertTime(timestamp) {
+  const date = new Date(timestamp);
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  return `${month}/${day}/${year}`;
+}
 
 displayComments();

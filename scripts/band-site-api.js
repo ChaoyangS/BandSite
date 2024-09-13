@@ -39,6 +39,3 @@ class BandSiteApi {
     return commentsData;
   }
 }
-
-// const BandSiteShow = BandSite.getShows();
-//const BandSitePostComment = BandSite.getComments();
