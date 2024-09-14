@@ -25,7 +25,6 @@ class BandSiteApi {
     const responseShow = await axios.get(
       `${this.baseUrl}showdates?api_key=${apiKey}`
     );
-    console.log(responseShow);
     const showData = responseShow.data;
     return showData;
   }
@@ -34,7 +33,6 @@ class BandSiteApi {
     const response = await axios.get(
       `${this.baseUrl}comments?api_key=${apiKey}`
     );
-
     const commentsData = response.data;
     return commentsData;
   }

@@ -21,7 +21,6 @@ h1.hero {
   @include mobilePageHeader;
   @include tablet {
     @include desktopPageHeader;
-    /*font-size: 2.5rem;*/
     height: 20rem;
   }
 
@@ -119,6 +118,12 @@ div.photo--gallery {
     margin: 0 5rem;
   }
 }
+.comments {
+  margin: 0 1.5rem;
+  @include desktop {
+    margin: 0 5rem;
+  }
+}
 
 .comments__top {
   display: flex;
@@ -127,12 +132,16 @@ div.photo--gallery {
 }
 .comments__box {
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding-left: 1rem;
   padding-bottom: 1rem;
 }
 .comment__form {
   display: flex;
   width: 95%;
+  padding-left: 1rem;
 
   flex-direction: column;
   align-items: flex-end;
@@ -151,7 +160,6 @@ div.photo--gallery {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  //padding: 1rem;
 
   @include tablet {
     width: 3rem;
@@ -164,7 +172,6 @@ div.photo--gallery {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  //padding: 1rem;
 
   @include tablet {
     width: 3rem;

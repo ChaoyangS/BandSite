@@ -1,12 +1,8 @@
 const BandSite1 = new BandSiteApi(apiKey);
 const show1 = await BandSite1.getShows();
-console.log(show1);
-
 const showListEle = document.querySelector(".shows__title1");
-console.log(showListEle);
 
 function displayShows() {
-  //showListEle.innerHTML = "";
   show1.forEach((show) => {
     displayShow(show);
   });

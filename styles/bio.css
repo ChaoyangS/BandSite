@@ -226,8 +226,9 @@ header {
 hr {
   color: #e1e1e1;
   background-color: #e1e1e1;
-  height: 0.01rem;
+  height: 0.005rem;
   border: solid;
+  border-width: thin;
   width: 100%;
   margin: auto;
   margin-bottom: 2rem;
@@ -255,7 +256,6 @@ h1.hero {
   h1.hero {
     font: "Avenir-bold";
     font-size: 3.75rem;
-    /*font-size: 2.5rem;*/
     height: 20rem;
   }
 }
@@ -382,6 +382,15 @@ div.photo--gallery {
   }
 }
 
+.comments {
+  margin: 0 1.5rem;
+}
+@media (min-width: 1279px) {
+  .comments {
+    margin: 0 5rem;
+  }
+}
+
 .comments__top {
   display: flex;
   width: 100%;
@@ -390,6 +399,9 @@ div.photo--gallery {
 
 .comments__box {
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding-left: 1rem;
   padding-bottom: 1rem;
 }
@@ -397,6 +409,7 @@ div.photo--gallery {
 .comment__form {
   display: flex;
   width: 95%;
+  padding-left: 1rem;
   flex-direction: column;
   align-items: flex-end;
   justify-content: right;

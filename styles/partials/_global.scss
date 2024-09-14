@@ -10,6 +10,7 @@ body {
 }
 h1 {
   @include mobilePageHeader;
+
   padding-bottom: 1rem;
   padding-top: 1.5rem;
 
@@ -169,8 +170,9 @@ header {
 hr {
   color: $SecondaryColor2;
   background-color: $SecondaryColor2;
-  height: 0.01rem;
+  height: 0.005rem;
   border: solid;
+  border-width: thin;
   width: 100%;
   margin: auto;
   margin-bottom: 2rem;

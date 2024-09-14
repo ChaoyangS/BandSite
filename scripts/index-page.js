@@ -1,14 +1,9 @@
 const BandSite = new BandSiteApi(apiKey);
 const comments = await BandSite.getComments();
-
-//console.log(dateNew);
-
 const commentListEle = document.querySelector(".comments__list");
-console.log(commentListEle);
 
 function displayComments() {
   commentListEle.innerHTML = "";
-  console.log(comments);
   comments.forEach((comment) => {
     displayComment(comment);
   });
@@ -60,7 +55,6 @@ const commentForm = document.querySelector(".comment__form");
 
 commentForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-
   const form = event.target;
   const name = form.name.value;
   const timestamp = `${
@@ -68,7 +62,6 @@ commentForm.addEventListener("submit", async (event) => {
   }/${new Date().getDate()}/${new Date().getFullYear()}`;
   const comment = form.comment.value;
 
-  //console.log(name, comment);
   const newComment = {
     name: name,
     timestamp: timestamp,
@@ -76,11 +69,8 @@ commentForm.addEventListener("submit", async (event) => {
   };
 
   comments.push(newComment);
-  console.log(comments);
   BandSite.postComment(comments);
-
   form.reset();
-
   displayComments();
 });
 
@@ -89,7 +79,6 @@ function convertTime(timestamp) {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const year = date.getFullYear();
-
   return `${month}/${day}/${year}`;
 }
 
